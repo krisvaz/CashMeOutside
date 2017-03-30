@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:c="http://java.sun.com/jsp/jstl/core" version="2.0">
+	<jsp:directive.page contentType="text/html; charset=ISO-8859-1"
+		pageEncoding="ISO-8859-1" session="false" />
+	<jsp:output doctype-root-element="html"
+		doctype-public="-//W3C//DTD XHTML 1.0 Transitional//EN"
+		doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
+		omit-xml-declaration="true" />
+	<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Register Customer</title>
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath}/res/style.css"></link>
+<link href="https://fonts.googleapis.com/css?family=Josefin+Sans"
+	rel="stylesheet"></link>
+</head>
+<body>
+	<h1
+		style="text-align: center; font-family: 'Josefin Sans', sans-serif;">
+		CashMeOutside Inc. <small>Bookstore</small>
+	</h1>
+	<div>
+		<div id="wrapper">
+			<table
+				style="display: inline-block; margin-bottom: 65px; margin-left: 50%; width: 25%;">
+				<tr>
+					<td>
+						<form action="" method="post">
+							<fieldset>
+								<legend>Sign in</legend>
+								<label>Username:</label>
+								<div>
+									<c:if test="${not empty invalidUser}">
+										<c:set var="invalidUser" scope="request"
+											value="${invalidUser}"></c:set>
+									</c:if>
+									<input type="text" name="username" placeholder="Username"
+										value="${invalidUser}" />
+								</div>
+								<label>Password:</label>
+								<div>
+									<c:choose>
+										<c:when test="${not empty invalidPassword}">
+											<c:set var="Password" scope="request"
+												value="${invalidPassword}"></c:set>
+										</c:when>
+										<c:otherwise>
+											<c:set var="Password" scope="request" value="Password"></c:set>
+										</c:otherwise>
+									</c:choose>
+
+									<input type="password" name="password"
+										placeholder="${Password}" />
+								</div>
+								<input type="submit" name="submit" value="Login" />
+							</fieldset>
+						</form>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id="wrapper">
+			<table style="display: inline-block; margin-left: 70%; width: 25%;">
+				<tr>
+					<td>
+						<form action="" method="post">
+							<fieldset>
+								<legend>Register Form</legend>
+								<label>Username:</label>
+								<div>
+									<input type="text" name="username" placeholder="Username" />
+								</div>
+								<label>First Name:</label>
+								<div>
+									<input type="text" name="fname" placeholder="First Name" />
+								</div>
+								<label>Last Name:</label>
+								<div>
+									<input type="text" name="lname" placeholder="Last Name" />
+								</div>
+								<label>Password:</label>
+								<div>
+									<input type="password" name="password" placeholder="Password" />
+								</div>
+								<input type="submit" name="submit" value="Next" />
+							</fieldset>
+						</form>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</body>
+	</html>
+</jsp:root>

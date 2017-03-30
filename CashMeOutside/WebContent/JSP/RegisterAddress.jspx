@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+	<jsp:directive.page contentType="text/html; charset=ISO-8859-1"
+		pageEncoding="ISO-8859-1" session="false" />
+	<jsp:output doctype-root-element="html"
+		doctype-public="-//W3C//DTD XHTML 1.0 Transitional//EN"
+		doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
+		omit-xml-declaration="true" />
+	<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Register Address</title>
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath}/res/style.css"></link>
+<link href="https://fonts.googleapis.com/css?family=Josefin+Sans"
+	rel="stylesheet"></link>
+</head>
+<body>
+	<h1
+		style="text-align: center; font-family: 'Josefin Sans', sans-serif;">
+		CashMeOutside Inc. <small>Bookstore</small>
+	</h1>
+	<div id="wrapper">
+		<table
+			style="display: inline-block; margin-bottom: 90%; margin-left: 25%; width: 100%;">
+			<tr>
+				<td>
+					<fieldset>
+						<p>Welcome ${fname}!</p>
+						<p>Almost done setting up!</p>
+					</fieldset>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="wrapper">
+		<table style="margin: auto;">
+			<tr>
+				<td>
+					<form action="RegisterAddress" method="post">
+						<fieldset>
+							<legend>Register Address</legend>
+							<input type="hidden" name="userid" value="${userid}" /> <label>Phone
+								Number:</label>
+							<div>
+								<input type="text" name="phone" placeholder="Phone Number" />
+							</div>
+							<label>Street:</label>
+							<div>
+								<input type="text" name="street" placeholder="Street" />
+							</div>
+							<label>City:</label>
+							<div>
+								<input type="text" name="city" placeholder="City" />
+							</div>
+							<label>Province:</label>
+							<div>
+								<input type="text" name="province" placeholder="Province" />
+							</div>
+							<label>Country:</label>
+							<div>
+								<input type="text" name="country" placeholder="Country" />
+							</div>
+							<label>Postal Code/Zip:</label>
+							<div>
+								<input type="text" name="zip" placeholder="Ex. M3J 1P3" />
+							</div>
+							<input type="submit" name="submit" value="Finish" />
+						</fieldset>
+					</form>
+				</td>
+			</tr>
+		</table>
+	</div>
+</body>
+	</html>
+</jsp:root>
